@@ -27,6 +27,7 @@ print("Taxa Erro Médio Absoluto: ", mae)
 print("Taxa Erro Médio Quadrático: ", mse)
 print("Coeficiente de determinação: ", r2)
 
-comparison = pd.DataFrame({f"Real: {y_test}\nPrevisto: {y_pred}"})
+comparison = pd.DataFrame({"Real": y_test.values, "Previsto": y_pred})
 
-print(comparison)
+print(comparison.head(10))
+
