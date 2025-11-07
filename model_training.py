@@ -1,4 +1,3 @@
-import kagglehub as kh
 import pandas as pd
 import numpy as np
 
@@ -7,10 +6,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
-data = kh.dataset_dowload_dowload("amirmohammadparvizi/houses-to-rent")
-df = data.frame
-X = df.drop(columns = "MedHouseVal") #o X aramzena todas as colunas do dataframe exceto (drop) a coluna alvo (MedHouseVal)
-y = df["MedHouseVal"]
+csv_path = "houses_to_rent.csv"
+data = pd.read_csv(csv_path)
+X = data.drop(columns = "total") #o X aramzena todas as colunas do dataframe exceto (drop) a coluna alvo (MedHouseVal)
+y = data["MedHouseVal"]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
 
@@ -30,9 +29,6 @@ print("Coeficiente de determinação: ", r2)
 comparison = pd.DataFrame({"Real": y_test.values, "Previsto": y_pred})
 
 print(comparison.head(10))
-<<<<<<< HEAD
 print(model.coef_)
 print(X.head(1))
-=======
->>>>>>> refs/remotes/origin/main
 
