@@ -30,6 +30,9 @@ print("Coeficiente de determinação: ", r2)
 comparison = pd.DataFrame({"Real": y_test.values, "Previsto": y_pred})
 
 print(comparison.head(10))
+<<<<<<< HEAD
 print(model.coef_)
 print(X.head(1))
+=======
+>>>>>>> refs/remotes/origin/main
 
