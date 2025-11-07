@@ -1,4 +1,4 @@
-import sklearn
+import kagglehub as kh
 import pandas as pd
 import numpy as np
 
@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
-data = fetch_california_housing(as_frame=True)
+data = kh.dataset_dowload_dowload("amirmohammadparvizi/houses-to-rent")
 df = data.frame
 X = df.drop(columns = "MedHouseVal") #o X aramzena todas as colunas do dataframe exceto (drop) a coluna alvo (MedHouseVal)
 y = df["MedHouseVal"]
@@ -30,4 +30,6 @@ print("Coeficiente de determinação: ", r2)
 comparison = pd.DataFrame({"Real": y_test.values, "Previsto": y_pred})
 
 print(comparison.head(10))
+print(model.coef_)
+print(X.head(1))
 
