@@ -22,10 +22,19 @@ for i in range(len(data)):
         data.loc[i, "furniture"] = 1
     elif data.loc[i, "furniture"] == "not furnished":
         data.loc[i, "furniture"] = 0
+    if data.loc[i, "hoa"]:
+        if "R$" in data.loc[i, "hoa"]:
+            data.loc[i, "hoa"]: str = data.loc[i, "hoa"].replace("R$", "")
+            data.loc[i, "hoa"]: str = data.loc[i, "hoa"].replace(",", ".")
+        if data.loc[i, "hoa"] == "Sem info":
+            data.loc[i, "hoa"] = 0
+        if data.loc[i, "hoa"] == "Incluso":
+            data.loc[i, "hoa"] = 0
 
 data["floor"] = data["floor"].astype(int)
 data["animal"] = data["animal"].astype(int)
 data["furniture"] = data["furniture"].astype(int)
+data["hoa"] = data["hoa"].astype(float)
 print("-------------------")
 print(data.dtypes)
 # X = data_transformed.drop(columns = "total") #o X aramzena todas as colunas do dataframe exceto (drop) a coluna alvo (MedHouseVal)
