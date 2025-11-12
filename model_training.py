@@ -30,34 +30,60 @@ for i in range(len(data)):
             data.loc[i, "hoa"] = 0
         if data.loc[i, "hoa"] == "Incluso":
             data.loc[i, "hoa"] = 0
+    if data.loc[i, "rent amount"]:
+        if "R$" in data.loc[i, "rent amount"]:
+            data.loc[i, "rent amount"]: str = data.loc[i, "rent amount"].replace("R$", "")
+            data.loc[i, "rent amount"]: str = data.loc[i, "rent amount"].replace(",", ".")
+        if data.loc[i, "rent amount"] == "Incluso":
+            data.loc[i, "rent amount"] = 0
+    if data.loc[i, "property tax"]:
+        if "R$" in data.loc[i, "property tax"]:
+            data.loc[i, "property tax"]: str = data.loc[i, "property tax"].replace("R$", "")
+            data.loc[i, "property tax"]: str = data.loc[i, "property tax"].replace(",", ".")
+        if data.loc[i, "property tax"] == "Incluso":
+            data.loc[i, "property tax"] = 0
+    if data.loc[i, "fire insurance"]:
+        if "R$" in data.loc[i, "fire insurance"]:
+            data.loc[i, "fire insurance"]: str = data.loc[i, "fire insurance"].replace("R$", "")
+            data.loc[i, "fire insurance"]: str = data.loc[i, "fire insurance"].replace(",", ".")
+        if data.loc[i, "fire insurance"] == "Incluso":
+            data.loc[i, "fire insurance"] = 0
+    if data.loc[i, "total"]:
+        if "R$" in data.loc[i, "total"]:
+            data.loc[i, "total"]: str = data.loc[i, "total"].replace("R$", "")
+            data.loc[i, "total"]: str = data.loc[i, "total"].replace(",", ".")
 
 data["floor"] = data["floor"].astype(int)
 data["animal"] = data["animal"].astype(int)
 data["furniture"] = data["furniture"].astype(int)
 data["hoa"] = data["hoa"].astype(float)
+data["rent amount"] = data["rent amount"].astype(float)
+data["property tax"] = data["property tax"].astype(float)
+data["fire insurance"] = data["fire insurance"].astype(float)
+data["total"] = data["total"].astype(float)
 print("-------------------")
 print(data.dtypes)
-# X = data_transformed.drop(columns = "total") #o X aramzena todas as colunas do dataframe exceto (drop) a coluna alvo (MedHouseVal)
-# y = data_transformed["total"]
+X = data.drop(columns = "total") #o X aramzena todas as colunas do dataframe exceto (drop) a coluna alvo (MedHouseVal)
+y = data["total"]
 
-# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
 
-# model = LinearRegression() #criou o objeto
-# model.fit(X_train, y_train) #treinou o objeto
+model = LinearRegression() #criou o objeto
+model.fit(X_train, y_train) #treinou o objeto
 
-# y_pred = model.predict(X_test)
+y_pred = model.predict(X_test)
 
-# mae = mean_absolute_error(y_test, y_pred)
-# mse = mean_squared_error(y_test, y_pred)
-# r2 = r2_score(y_test, y_pred)
+mae = mean_absolute_error(y_test, y_pred)
+mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
 
-# print("Taxa Erro Médio Absoluto: ", mae)
-# print("Taxa Erro Médio Quadrático: ", mse)
-# print("Coeficiente de determinação: ", r2)
+print("Taxa Erro Médio Absoluto: ", mae)
+print("Taxa Erro Médio Quadrático: ", mse)
+print("Coeficiente de determinação: ", r2)
 
-# comparison = pd.DataFrame({"Real": y_test.values, "Previsto": y_pred})
+comparison = pd.DataFrame({"Real": y_test.values, "Previsto": y_pred})
 
-# print(comparison.head(10))
-# print(model.coef_)
-# print(X.head(1))
+print(comparison.head(10))
+print(model.coef_)
+print(X.head(1))
 
