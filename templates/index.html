@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <script type="text/javascript" src="{{url_for('static', filename='script.js')}}" defer></script>
 </head>
 <body>
     <form>
@@ -15,7 +17,7 @@
         <input type = "integer" name = "floor" placeholder="Andar">
         <input type = "integer" name = "animal" placeholder="Animais">
         <input type = "integer" name = "furniture" placeholder="Mobiliado">
-        <button>Enviar</button>
+        <button onclick="send()">Enviar</button>
     </form>
 </body>
 </html>

@@ -1,5 +1,7 @@
 from flask import Flask
 from flask import render_template
+# from model_training import train
+# from rent_predicting import predict_rent
 
 app = Flask(__name__)
 
