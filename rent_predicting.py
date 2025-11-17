@@ -1,5 +1,12 @@
+from array import array
+
 def predict_rent(user_features, model_):
     print("Função predict_rent sendo chamada")
-    predicted_rent = model_.predict(user_features)
+    user_features = [int(feature) for feature in user_features]
+    user_features = array('i', user_features)
+    print(user_features)
+    #>>array('i', [89, 2, 2, 1, 6, 1, 0])
+    print(model_.n_features_in_)
+    predicted_rent = model_.predict([user_features])
     print(predicted_rent)
-    return predicted_rent
+    return "0"
