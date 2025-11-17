@@ -8,16 +8,16 @@
     <script type="text/javascript" src="{{url_for('static', filename='script.js')}}" defer></script>
 </head>
 <body>
-    <form>
+    <container>
         <h2>Dados do Imóvel</h2>
-        <input type = "integer" name = "area" placeholder="Áreas">
-        <input type = "integer" name = "rooms" placeholder="Quartos">
-        <input type = "integer" name = "bathrooms" placeholder="Banheiros">
-        <input type = "integer" name = "parking spaces" placeholder="Garagens">
-        <input type = "integer" name = "floor" placeholder="Andar">
-        <input type = "integer" name = "animal" placeholder="Animais">
-        <input type = "integer" name = "furniture" placeholder="Mobiliado">
+        <input type = "integer" class = "area" placeholder="Áreas">
+        <input type = "integer" class = "rooms" placeholder="Quartos">
+        <input type = "integer" class = "bathrooms" placeholder="Banheiros">
+        <input type = "integer" class = "parking_spaces" placeholder="Garagens">
+        <input type = "integer" class = "floor" placeholder="Andar">
+        <input type = "integer" class = "animal" placeholder="Animais">
+        <input type = "integer" class = "furniture" placeholder="Mobiliado">
         <button onclick="send()">Enviar</button>
-    </form>
+    </container>
 </body>
 </html>
