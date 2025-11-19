@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template, request
+from flask import render_template, request, jsonify
 from model_training import train
 from rent_predicting import predict_rent
 
@@ -16,7 +16,8 @@ def index():
         print("Features: ", features)
         print("------------------")
         predicted_rent = predict_rent(features, model)
-        return {f"<h1> predicted_rent: {predicted_rent}</h1>"}
+        # return f"<h1> predicted_rent: {predicted_rent}</h1>"
+        return jsonify({'predicted_rent': float(predicted_rent[0])})
     return render_template('index.html')
 
 
