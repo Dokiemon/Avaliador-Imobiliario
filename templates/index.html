@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"> -->
-    <link rel="stylesheet" href="/static/style.css">
-    <link rel="stylesheet" href="/static/fonts/Panchang/css/panchang.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='fonts/Panchang/css/panchang.css')}}">
     <script type="text/javascript" src="{{url_for('static', filename='script.js')}}" defer></script>
 </head>
 <body>
     <header>
-        <h1>Avaliador Imobiliário</h1>
-        <p>Rede neural treinada para estimar valor imobiliário. Insira os dados do imóvel e calcule seu aluguel estimado.</p>
+        <div id="header_space">
+            <div class="header_image">
+                <img src="{{url_for('static', filename='images/header_background.png')}}" alt="">
+            </div>
+            <div class="gradient"></div>
+            <div class="header_text">
+                <h1>Avaliador Imobiliário</h1>
+                <p>Rede neural treinada para estimar valor imobiliário. Insira os dados do imóvel e calcule seu aluguel estimado.</p>
+            </div>
+        </div>
     </header>
     <div id="information">
         <div class="information_space">
@@ -22,7 +29,7 @@
                 <input type="number" class="area" placeholder="" min="0">
             </div>
             <div class="image">
-                <img src="/static/images/area.jpg" alt="">
+                <img src="{{url_for('static', filename='images/area.jpg')}}" alt="">
             </div>
         </div>
         <div class="information_space">
@@ -32,7 +39,7 @@
                 <input type="number" class="rooms" placeholder="" min="0">
             </div>
             <div class="image">
-                <img src="/static/images/area.jpg" alt="">
+                <img src="{{url_for('static', filename='images/room.jpg')}}" alt="">
             </div>
         </div>
         <div class="information_space">
@@ -42,7 +49,7 @@
                 <input type="number" class="bathrooms" placeholder="" min="0">
             </div>
             <div class="image">
-                <img src="/static/images/area.jpg" alt="">
+                <img src="{{url_for('static', filename='images/bathroom.webp')}}" alt="">
             </div>
         </div>
         <div class="information_space">
@@ -52,7 +59,7 @@
                 <input type="number" class="parking_spaces" placeholder="" min="0">
             </div>
             <div class="image">
-                <img src="/static/images/area.jpg" alt="">
+                <img src="{{url_for('static', filename='images/garage.webp')}}" alt="">
             </div>
         </div>
         <div class="information_space">
@@ -62,7 +69,7 @@
                 <input type="number" class="floor" placeholder="" min="0">
             </div>
             <div class="image">
-                <img src="/static/images/area.jpg" alt="">
+                <img src="{{url_for('static', filename='images/floor.jpg')}}" alt="">
             </div>
         </div>
         <div class="information_space">
@@ -70,16 +77,18 @@
                 <h2>Animais</h2>
                 <p>Se o imóvel permite animais de estimação</p>
                 <div class="radio-group">
-                    <div>
+                    <div class="answer">
                         <input type="radio" id="animal-sim" name="animal" value="1">
                         <label for="animal-sim">Sim</label>
+                    </div>
+                    <div class="answer">
                         <input type="radio" id="animal-nao" name="animal" value="0" checked>
                         <label for="animal-nao">Não</label>
                     </div>
                 </div>
             </div>
             <div class="image">
-                <img src="/static/images/area.jpg" alt="">
+                <img src="{{url_for('static', filename='images/animal.jpg')}}" alt="">
             </div>
         </div>
         <div class="information_space">
@@ -87,16 +96,18 @@
                 <h2>Mobiliado</h2>
                 <p>Se o imóvel é mobiliado</p>
                 <div class="radio-group">
-                    <div>
+                    <div class="answer">
                         <input type="radio" id="furniture-sim" name="furniture" value="1">
                         <label for="furniture-sim">Sim</label>
+                    </div>
+                    <div class="answer">
                         <input type="radio" id="furniture-nao" name="furniture" value="0" checked>
                         <label for="furniture-nao">Não</label>
                     </div>
                 </div>
             </div>
             <div class="image">
-                <img src="/static/images/area.jpg" alt="">
+                <img src="{{url_for('static', filename='images/furniture.jpg')}}" alt="">
             </div>
         </div>
     <div id="result_space">
