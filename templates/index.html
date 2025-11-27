@@ -4,41 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"> -->
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/fonts/Panchang/css/panchang.css">
     <script type="text/javascript" src="{{url_for('static', filename='script.js')}}" defer></script>
 </head>
 <body>
-    <container>
-        <h2>Dados do Imóvel</h2>
-        <input type="number" class="area" placeholder="Área (m²)" min="0">
-        <input type="number" class="rooms" placeholder="Quartos" min="0">
-        <input type="number" class="bathrooms" placeholder="Banheiros" min="0">
-        <input type="number" class="parking_spaces" placeholder="Garagens" min="0">
-        <input type="number" class="floor" placeholder="Andar" min="0">
-        
-        <div class="radio-group">
-            <label>Aceita animais?</label>
-            <div>
-                <input type="radio" id="animal-sim" name="animal" value="1">
-                <label for="animal-sim">Sim</label>
-                <input type="radio" id="animal-nao" name="animal" value="0" checked>
-                <label for="animal-nao">Não</label>
+    <header>
+        <h1>Avaliador Imobiliário</h1>
+        <p>Rede neural treinada para estimar valor imobiliário. Insira os dados do imóvel e calcule seu aluguel estimado.</p>
+    </header>
+    <div id="information">
+        <div class="information_space">
+            <div class="input">
+                <h2>Área</h2>
+                <p>Área do imóvel em m²</p>
+                <input type="number" class="area" placeholder="" min="0">
+            </div>
+            <div class="image">
+                <img src="/static/images/area.jpg" alt="">
             </div>
         </div>
-        
-        <div class="radio-group">
-            <label>Mobiliado?</label>
-            <div>
-                <input type="radio" id="furniture-sim" name="furniture" value="1">
-                <label for="furniture-sim">Sim</label>
-                <input type="radio" id="furniture-nao" name="furniture" value="0" checked>
-                <label for="furniture-nao">Não</label>
+        <div class="information_space">
+            <div class="input">
+                <h2>Quartos</h2>
+                <p>Quantidade de quartos do imóvel</p>
+                <input type="number" class="rooms" placeholder="" min="0">
+            </div>
+            <div class="image">
+                <img src="/static/images/area.jpg" alt="">
             </div>
         </div>
-        
+        <div class="information_space">
+            <div class="input">
+                <h2>Banheiros</h2>
+                <p>Quantidade de banheiros do imóvel</p>
+                <input type="number" class="bathrooms" placeholder="" min="0">
+            </div>
+            <div class="image">
+                <img src="/static/images/area.jpg" alt="">
+            </div>
+        </div>
+        <div class="information_space">
+            <div class="input">
+                <h2>Garagens</h2>
+                <p>Quantidade de espaços de garagem do imóvel</p>
+                <input type="number" class="parking_spaces" placeholder="" min="0">
+            </div>
+            <div class="image">
+                <img src="/static/images/area.jpg" alt="">
+            </div>
+        </div>
+        <div class="information_space">
+            <div class="input">
+                <h2>Andar</h2>
+                <p>Andar do imóvel</p>
+                <input type="number" class="floor" placeholder="" min="0">
+            </div>
+            <div class="image">
+                <img src="/static/images/area.jpg" alt="">
+            </div>
+        </div>
+        <div class="information_space">
+            <div class="input">
+                <h2>Animais</h2>
+                <p>Se o imóvel permite animais de estimação</p>
+                <div class="radio-group">
+                    <div>
+                        <input type="radio" id="animal-sim" name="animal" value="1">
+                        <label for="animal-sim">Sim</label>
+                        <input type="radio" id="animal-nao" name="animal" value="0" checked>
+                        <label for="animal-nao">Não</label>
+                    </div>
+                </div>
+            </div>
+            <div class="image">
+                <img src="/static/images/area.jpg" alt="">
+            </div>
+        </div>
+        <div class="information_space">
+            <div class="input">
+                <h2>Mobiliado</h2>
+                <p>Se o imóvel é mobiliado</p>
+                <div class="radio-group">
+                    <div>
+                        <input type="radio" id="furniture-sim" name="furniture" value="1">
+                        <label for="furniture-sim">Sim</label>
+                        <input type="radio" id="furniture-nao" name="furniture" value="0" checked>
+                        <label for="furniture-nao">Não</label>
+                    </div>
+                </div>
+            </div>
+            <div class="image">
+                <img src="/static/images/area.jpg" alt="">
+            </div>
+        </div>
+    <div id="result_space">
         <button onclick="send()">Enviar</button>
         <h3>Resultado</h3>
         <div class="result"></div>
-    </container>
+    </div>
 </body>
 </html>

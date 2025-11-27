@@ -1,1 +1,151 @@
 /* "escute com atenção, Gohan: O indiano está sempre certo" */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+html {
+    --mid-blue: rgb(50, 63, 78);
+    --light-tan: rgb(241, 225, 170);
+}
+
+.quicksand-font {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+    margin: 0;
+    color: var(--light-tan);
+}
+
+#information {
+    display: flex;
+    flex-direction: column;
+}
+
+.information_space {
+    background-color: var(--mid-blue);
+    display: grid;
+    height: 75vh;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+    box-shadow: 0px 0vh 3vh 2vh rgba(0,0,0,0.5);
+    overflow: hidden;
+    border-bottom: 1vh solid var(--light-tan);
+}
+
+.information_space:nth-child(odd) {
+    grid-template-columns: 3fr 2fr;
+}
+
+.information_space:nth-child(even) {
+    grid-template-columns: 2fr 3fr;
+}
+
+.information_space .input{
+    height: 80%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.information_space .input h2{
+    background-color: var(--mid-blue);
+    padding: 1.5vh 5vh;
+    margin: 2vh;
+    font-size: 10vh;
+    border-radius: 10vh;
+    box-shadow: -1vh 1vh 1.5vh -0.5vh rgba(0,0,0,0.75);
+}
+
+.information_space .input p{
+    margin: 2vh 0 4vh 0;
+    font-size: 4vh;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+}
+
+.information_space .input input{
+    font-size: 8vh;
+}
+
+.information_space .input input[type="number"] {
+    color: white;
+    border: 0.5vh solid var(--light-tan);
+    border-radius: 4vh;
+    outline: none;
+    background: none;
+    padding: 1vh 2.5vh;
+    margin: 0 0 10vh 0;
+    width: 50%;
+    box-shadow: 0px 0vh 1vh 0.75vh rgba(0,0,0,0.5) inset;
+}
+
+.information_space .input input[type="number"]::-webkit-inner-spin-button,
+.information_space .input input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0px 0vh 3vh 1.5vh rgba(0,0,0,0.75);
+}
+
+.information_space:nth-child(1) .image, .information_space:nth-child(3) .image, .information_space:nth-child(5) .image, .information_space:nth-child(7) .image{
+    border-radius: 15vh 0vh 0vh 60vh;
+}
+
+.information_space:nth-child(2) .image, .information_space:nth-child(4) .image, .information_space:nth-child(6) .image{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    border-radius: 0vh 15vh 60vh 0vh;
+}
+
+.information_space:nth-child(2) .input, .information_space:nth-child(4) .input, .information_space:nth-child(6) .input{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.information_space .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.information_space:nth-child(1){
+    z-index: 8;
+}
+
+.information_space:nth-child(2){
+    z-index: 7;
+}
+
+.information_space:nth-child(3){
+    z-index: 6;
+}
+
+.information_space:nth-child(4){
+    z-index: 5;
+}
+
+.information_space:nth-child(5){
+    z-index: 4;
+}
+
+.information_space:nth-child(6){
+    z-index: 3;
+}
+
+.information_space:nth-child(7){
+    z-index: 2;
+}
+
+.information_space h2 {
+    font-family: 'Panchang-Bold', sans-serif;
+}
