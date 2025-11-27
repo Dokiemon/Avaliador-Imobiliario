@@ -5,8 +5,8 @@ async function send(){
     bathrooms = document.querySelector(".bathrooms").value
     parking_spaces = document.querySelector(".parking_spaces").value
     floor = document.querySelector(".floor").value
-    animal = document.querySelector(".animal").value
-    furniture = document.querySelector(".furniture").value
+    animal = document.querySelector('input[name="animal"]:checked').value
+    furniture = document.querySelector('input[name="furniture"]:checked').value
     features_ = [area, rooms, bathrooms, parking_spaces, floor, animal, furniture]
     console.log(features_)
 

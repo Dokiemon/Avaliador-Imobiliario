@@ -10,13 +10,32 @@
 <body>
     <container>
         <h2>Dados do Imóvel</h2>
-        <input type = "integer" class = "area" placeholder="Áreas">
-        <input type = "integer" class = "rooms" placeholder="Quartos">
-        <input type = "integer" class = "bathrooms" placeholder="Banheiros">
-        <input type = "integer" class = "parking_spaces" placeholder="Garagens">
-        <input type = "integer" class = "floor" placeholder="Andar">
-        <input type = "integer" class = "animal" placeholder="Animais">
-        <input type = "integer" class = "furniture" placeholder="Mobiliado">
+        <input type="number" class="area" placeholder="Área (m²)" min="0">
+        <input type="number" class="rooms" placeholder="Quartos" min="0">
+        <input type="number" class="bathrooms" placeholder="Banheiros" min="0">
+        <input type="number" class="parking_spaces" placeholder="Garagens" min="0">
+        <input type="number" class="floor" placeholder="Andar" min="0">
+        
+        <div class="radio-group">
+            <label>Aceita animais?</label>
+            <div>
+                <input type="radio" id="animal-sim" name="animal" value="1">
+                <label for="animal-sim">Sim</label>
+                <input type="radio" id="animal-nao" name="animal" value="0" checked>
+                <label for="animal-nao">Não</label>
+            </div>
+        </div>
+        
+        <div class="radio-group">
+            <label>Mobiliado?</label>
+            <div>
+                <input type="radio" id="furniture-sim" name="furniture" value="1">
+                <label for="furniture-sim">Sim</label>
+                <input type="radio" id="furniture-nao" name="furniture" value="0" checked>
+                <label for="furniture-nao">Não</label>
+            </div>
+        </div>
+        
         <button onclick="send()">Enviar</button>
         <h3>Resultado</h3>
         <div class="result"></div>
