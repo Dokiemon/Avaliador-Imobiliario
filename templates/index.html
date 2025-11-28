@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='fonts/Panchang/css/panchang.css')}}">
     <script type="text/javascript" src="{{url_for('static', filename='script.js')}}" defer></script>
+    <script type="text/javascript" src="/static/script.js" defer></script>
+</head>
 </head>
 <body>
     <header>
-        <div id="header_space">
-            <div class="header_image">
+        <div class="image_space">
+            <div class="background_image">
                 <img src="{{url_for('static', filename='images/header_background.png')}}" alt="">
             </div>
             <div class="gradient"></div>
-            <div class="header_text">
+            <div class="text">
                 <h1>Avaliador Imobiliário</h1>
                 <p>Rede neural treinada para estimar valor imobiliário. Insira os dados do imóvel e calcule seu aluguel estimado.</p>
             </div>
@@ -77,11 +80,11 @@
                 <h2>Animais</h2>
                 <p>Se o imóvel permite animais de estimação</p>
                 <div class="radio-group">
-                    <div class="answer">
+                    <div class="answer yes">
                         <input type="radio" id="animal-sim" name="animal" value="1">
                         <label for="animal-sim">Sim</label>
                     </div>
-                    <div class="answer">
+                    <div class="answer no">
                         <input type="radio" id="animal-nao" name="animal" value="0" checked>
                         <label for="animal-nao">Não</label>
                     </div>
@@ -96,11 +99,11 @@
                 <h2>Mobiliado</h2>
                 <p>Se o imóvel é mobiliado</p>
                 <div class="radio-group">
-                    <div class="answer">
+                    <div class="answer yes">
                         <input type="radio" id="furniture-sim" name="furniture" value="1">
                         <label for="furniture-sim">Sim</label>
                     </div>
-                    <div class="answer">
+                    <div class="answer no">
                         <input type="radio" id="furniture-nao" name="furniture" value="0" checked>
                         <label for="furniture-nao">Não</label>
                     </div>
@@ -110,10 +113,19 @@
                 <img src="{{url_for('static', filename='images/furniture.jpg')}}" alt="">
             </div>
         </div>
-    <div id="result_space">
-        <button onclick="send()">Enviar</button>
-        <h3>Resultado</h3>
-        <div class="result"></div>
-    </div>
+    <footer>
+        <div class="image_space">
+            <div class="background_image">
+                <img src="{{url_for('static', filename='images/header_background.png')}}" alt="">
+            </div>
+            <div class="gradient"></div>
+            <div class="text">
+                <h1>Resultado</h1>
+                <p>Resultado do aluguel estimado:</p>
+                <div class="result"></div>
+                <button onclick="send()">Calcular</button>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

@@ -22,7 +22,7 @@ async function send(){
         console.log('Success:', data);
         let predictedRent = data.predicted_rent;
         let formattedRent = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(predictedRent);
-        document.querySelector(".result").innerHTML = `Predicted Rent: ${formattedRent}`;
+        document.querySelector(".result").innerHTML = `${formattedRent}`;
     })
     .catch((error) => {
         console.error('Error:', error);
