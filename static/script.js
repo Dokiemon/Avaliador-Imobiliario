@@ -28,3 +28,23 @@ async function send(){
         console.error('Error:', error);
     });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const numberInputs = document.querySelectorAll('input[type="number"]');
+    
+    numberInputs.forEach(input => {
+        input.addEventListener('input', function() {
+            const min = parseFloat(this.getAttribute('min')) || 0;
+            if (parseFloat(this.value) < min) {
+                this.value = min;
+            }
+        });
+        
+        input.addEventListener('blur', function() {
+            const min = parseFloat(this.getAttribute('min')) || 0;
+            if (this.value === '' || parseFloat(this.value) < min) {
+                this.value = min;
+            }
+        });
+    });
+});

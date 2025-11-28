@@ -85,7 +85,7 @@ footer {
 .image_space .result{
     height: 9.5vh;
     font-size: 8vh;
-    color: white;
+    color: var(--light-tan);
     border: 0.5vh solid var(--light-tan);
     border-radius: 4vh;
     outline: none;
@@ -94,21 +94,35 @@ footer {
     margin: 0 0 0 0;
     width: 50%;
     box-shadow: 0px 0vh 1vh 0.75vh rgba(0,0,0,0.5) inset;
+    margin-top: 1.25vh;
+    text-align: center;
 }
 
 .image_space .text button{
     font-size: 6vh;
-    margin-top: 4vh;
     padding: 1vh 3vh;
-    border-radius: 5vh;
-    border: none;
-    background-color: var(--light-tan);
-    color: var(--mid-blue);
+    border-radius: 0 0 5vh 5vh;
+    border-top: none;
+    border-left: 0.5vh solid var(--light-tan);
+    border-right: 0.5vh solid var(--light-tan);
+    border-bottom: 0.5vh solid var(--light-tan);
+    background-color: var(--mid-blue);
+    color: var(--light-tan);
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
-    box-shadow: -1vh 1vh 1.5vh -0.5vh rgba(0,0,0,0.75);
+    box-shadow: 0px 0vh 1vh 0.75vh rgba(0,0,0,0.5) inset;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-top: -0.5vh;
+}
+
+.image_space .text button:hover{
+    box-shadow: 0px 0vh 1vh 0.75vh rgba(0,0,0,0.0) inset;
+    color: white;
+}
+
+footer p{
+    margin-top: 5vh;
 }
 
 #information {
@@ -166,7 +180,7 @@ footer {
 }
 
 .information_space .input input[type="number"] {
-    color: white;
+    color: var(--light-tan);
     border: 0.5vh solid var(--light-tan);
     border-radius: 4vh;
     outline: none;
@@ -233,7 +247,6 @@ footer {
     transition: all 0.3s ease;
 }
 
-/* Estado checked */
 .answer input[type="radio"]:checked {
     background-color: var(--light-tan);
     box-shadow: 0 0 0 0.5vh var(--mid-blue) inset;
@@ -302,4 +315,15 @@ footer {
 
 .information_space h2 {
     font-family: 'Panchang-Bold', sans-serif;
+}
+
+::-webkit-scrollbar{
+    width: 1vh;
+    background-color: var(--light-tan);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--mid-blue);
+    box-shadow: 0.5vh 0vh 0.75vh -0.2vh rgba(0,0,0,0.5) inset;
+    height: 35vh;
 }
